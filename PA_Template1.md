@@ -17,7 +17,9 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 
 ```{r}
 mean(total.steps, na.rm=TRUE)
+## [1] 9354.23
 median(total.steps, na.rm=TRUE)
+## [1] 10395
 ```
 
 ## Mean and median number of steps taken each day
