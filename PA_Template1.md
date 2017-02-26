@@ -31,6 +31,7 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
     xlab("5-minute interval") +
     ylab("average number of steps taken")
 ```
+![](figures/plot2.png?raw=true)
 
 ## The 5-minute interval that, on average, contains the maximum number of steps
 
@@ -69,6 +70,10 @@ Now, using the filled data set, let's make a histogram of the total number of st
 ```{r}
 total.steps <- tapply(filled.data$steps, filled.data$date, FUN=sum)
 qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
+```
+![](figures/plot3.png?raw=true)
+
+```{r}
 mean(total.steps)
 median(total.steps)
 ```
@@ -106,3 +111,4 @@ averages <- aggregate(steps ~ interval + day, data=filled.data, mean)
 ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
     xlab("5-minute interval") + ylab("Number of steps")
 ```
+![](figures/plot4.png?raw=true)
