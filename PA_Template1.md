@@ -12,6 +12,10 @@ data <- read.csv("activity.csv")
 library(ggplot2)
 total.steps <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
 qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
+```
+![](figures/plot1.png?raw=true)
+
+```{r}
 mean(total.steps, na.rm=TRUE)
 median(total.steps, na.rm=TRUE)
 ```
