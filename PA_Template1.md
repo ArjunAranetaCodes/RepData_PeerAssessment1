@@ -42,6 +42,9 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
 ```{r}
 averages[which.max(averages$steps),]
 ```
+##     interval    steps
+## 104      835 206.1698
+
 
 ## Code to describe and show a strategy for imputing missing data
 
@@ -52,6 +55,9 @@ missing <- is.na(data$steps)
 # How many missing
 table(missing)
 ```
+## missing
+## FALSE  TRUE 
+## 15264  2304
 
 All of the missing values are filled in with mean value for that 5-minute
 interval.
@@ -79,8 +85,13 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 
 ```{r}
 mean(total.steps)
+```
+## [1] 10766.19
+
+```{r}
 median(total.steps)
 ```
+## [1] 10766.19
 
 Mean and median values are higher after imputing missing data. The reason is
 that in the original data, there are some days with `steps` values `NA` for 
